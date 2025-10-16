@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Endless Racing Game</title>
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(to top, #87cefa, #fff);
+      flex-direction: column;
+    }
+
+    /* Login Menu */
+    #menu {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 12px 25px;
+      margin: 10px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    button:hover {
+      transform: scale(1.1);
+    }
+
+    #loginBtn { background-color: #4CAF50; color: white; }
+    #signupBtn { background-color: #2196F3; color: white; }
+    #guestBtn { background-color: #FF9800; color: white; }
+    #toggleMode { background-color: #9C27B0; color: white; }
+
+<div id="leaderboard">
+  <h2>🏆 Leaderboard</h2>
+  <ol id="scoresList"></ol>
+</div>
+
+
+    /* Canvas */
+    canvas {
+      border: 3px solid #000;
+      display: none; /* hidden until game starts */
+      background-color: #4CAF50;
+    }
+  </style>
+</head>
+<body>
+  <div id="menu">
+        <h1>🚗 GearRift 🚗</h1>
+    <h1>🚗 Endless Racing Game 🚗</h1>
+    <button id="loginBtn">Login</button>
+    <button id="signupBtn">Signup</button>
+    <button id="guestBtn">Play as Guest</button>
+    <br>
+    <button id="toggleMode">Dark/Light Mode</button>
+  </div>
+
+  <canvas id="gameCanvas" width="280" height="470"></canvas>
+
+  <script src="game.js"></script>
+  <script src="auth.js"></script>
+</body>
+</html>
