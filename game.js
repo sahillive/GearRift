@@ -1,7 +1,3 @@
-// Reference to Firebase
-const db = firebase.firestore();
-const auth = firebase.auth();
-
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 
@@ -254,3 +250,4 @@ setInterval(createCoin,1500);
 setInterval(createPowerUp,7000);
 
 gameLoop();
+
